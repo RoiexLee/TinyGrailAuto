@@ -23,8 +23,6 @@ jobs:
           pip install -r requirements.txt
       - name: Run checkin
         run: |
-          python3 checkin.py
-        env:
-          COOKIES: ${{ secrets.COOKIES }}
+          python3 checkin.py --cookies=${{ secrets.COOKIES }}
       - name: Keep alive
         uses: gautamkrishnar/keepalive-workflow@v1

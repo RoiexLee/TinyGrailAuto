@@ -1,3 +1,4 @@
+import argparse
 import os
 
 import requests
@@ -29,8 +30,12 @@ class API(object):
             self.get_bonus2()
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--cookies", type=str, required=True, help="Cookies")
+args = parser.parse_args()
+
 if __name__ == '__main__':
-    cookies = os.environ.get("COOKIES", "").split("&")
+    cookies = args.cookies.split("&")
     if len(cookies) == 0:
         raise Exception("no cookies")
     else:
