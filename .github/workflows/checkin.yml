@@ -26,6 +26,5 @@ jobs:
           python3 checkin.py
         env:
           COOKIES: ${{ secrets.COOKIES }}
-          TOKEN: ${{ secrets.TOKEN }}
       - name: Keep alive
         uses: gautamkrishnar/keepalive-workflow@v1
