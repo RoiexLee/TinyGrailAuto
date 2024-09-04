@@ -1,7 +1,10 @@
 import argparse
-import os
+import logging
 
 import requests
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 class API(object):
@@ -27,7 +30,7 @@ class API(object):
 
     def start(self):
         for _ in range(3):
-            self.get_bonus2()
+            logger.info(self.get_bonus2())
 
 
 parser = argparse.ArgumentParser()
